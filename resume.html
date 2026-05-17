@@ -1,499 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shreyas Narsale – Resume</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet" />
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Narsale Shreyas Manohar – Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            font-size: 10.5pt;
-            color: #0f1f35;
-            background: #fff;
-            padding: 2.5cm 2cm;
-            max-width: 21cm;
-            margin: 0 auto;
-            line-height: 1.55;
-        }
+    body {
+      font-family:'DM Sans', sans-serif;
+      font-size:10.2pt;
+      color:#0d1829;
+      background:#fff;
+      padding:1.8cm 1.8cm;
+      max-width:21cm;
+      margin:0 auto;
+      line-height:1.5;
+    }
 
-        /* ── HEADER ── */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 14px;
-            border-bottom: 2.5px solid #1d4ed8;
-            padding-bottom: 12px;
-        }
+    /* ── HEADER ── */
+    .header {
+      display:flex; justify-content:space-between; align-items:flex-start;
+      padding-bottom:12px; border-bottom:2.5px solid #2563eb;
+      margin-bottom:14px;
+    }
+    .h-left h1 {
+      font-size:22pt; font-weight:700; color:#0d1829; letter-spacing:-.4px;
+    }
+    .h-left .role {
+      font-size:10.5pt; color:#2563eb; font-weight:600; margin-top:3px;
+    }
+    .h-left .college {
+      font-size:9.5pt; color:#4a5a72; margin-top:2px;
+    }
+    .h-right {
+      text-align:right; font-size:8.8pt; color:#4a5a72; line-height:1.8;
+    }
+    .h-right a { color:#2563eb; text-decoration:none; }
 
-        .header-left h1 {
-            font-size: 22pt;
-            font-weight: 800;
-            color: #0f1f35;
-            letter-spacing: -.5px;
-        }
+    /* ── SECTION ── */
+    .sec { margin-top:13px; }
+    .sec-title {
+      font-size:9.5pt; font-weight:700; color:#2563eb;
+      text-transform:uppercase; letter-spacing:1.2px;
+      border-bottom:1px solid #dbe4f0;
+      padding-bottom:3px; margin-bottom:9px;
+    }
 
-        .header-left .title {
-            font-size: 10.5pt;
-            color: #1d4ed8;
-            font-weight: 600;
-            margin-top: 3px;
-        }
+    /* ── ITEMS ── */
+    .item { margin-bottom:10px; }
+    .item-head {
+      display:flex; justify-content:space-between; align-items:baseline;
+    }
+    .item-title { font-size:10.2pt; font-weight:700; color:#0d1829; }
+    .item-date { font-size:8.5pt; color:#4a5a72; white-space:nowrap; }
+    .item-sub {
+      font-size:9.2pt; color:#2563eb; font-weight:500; margin-bottom:2px;
+    }
+    .item-desc { font-size:9.2pt; color:#273d55; }
+    .item-desc ul { padding-left:16px; margin-top:3px; }
+    .item-desc ul li { margin-bottom:2px; }
 
-        .header-left .college {
-            font-size: 9.5pt;
-            color: #4a6080;
-            margin-top: 2px;
-        }
+    /* ── TAGS ── */
+    .tags { display:flex; flex-wrap:wrap; gap:4px; margin-top:4px; }
+    .tag {
+      font-size:7.8pt; background:#eff6ff; color:#2563eb;
+      border:1px solid #bfdbfe; padding:1px 7px; border-radius:99px;
+      font-weight:500;
+    }
 
-        .header-right {
-            text-align: right;
-            font-size: 9pt;
-            color: #4a6080;
-            line-height: 1.7;
-        }
+    /* ── EDUCATION ── */
+    .edu-row {
+      display:flex; justify-content:space-between; align-items:baseline;
+      margin-bottom:7px;
+    }
+    .edu-deg { font-weight:700; font-size:10.2pt; }
+    .edu-school { font-size:9.2pt; color:#2563eb; font-weight:500; }
+    .edu-score {
+      font-weight:700; font-size:9.5pt; color:#059669;
+      font-family:monospace;
+    }
 
-        .header-right a {
-            color: #1d4ed8;
-            text-decoration: none;
-        }
+    /* ── SKILLS ── */
+    .skills-grid {
+      display:grid; grid-template-columns:repeat(3,1fr);
+      gap:5px 14px;
+    }
+    .skill-item { font-size:9.2pt; }
+    .skill-item span { font-weight:600; color:#2563eb; }
 
-        /* ── SECTIONS ── */
-        .section {
-            margin-top: 14px;
-        }
+    /* ── CERTS ── */
+    .cert-list { columns:2; gap:18px; }
+    .cert-item {
+      font-size:8.8pt; color:#273d55; margin-bottom:3px; break-inside:avoid;
+    }
+    .cert-item::before { content:"✓ "; color:#059669; font-weight:700; }
 
-        .section-title {
-            font-size: 11pt;
-            font-weight: 700;
-            color: #1d4ed8;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 1px solid #d1dce8;
-            padding-bottom: 3px;
-            margin-bottom: 9px;
-        }
+    /* ── PRINT ── */
+    @media print {
+      body { padding:1.4cm 1.4cm; font-size:9.8pt; }
+      @page { margin:0; size:A4; }
+    }
 
-        /* ── EXPERIENCE / PROJECTS ── */
-        .item {
-            margin-bottom: 10px;
-        }
-
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-        }
-
-        .item-title {
-            font-size: 10.5pt;
-            font-weight: 700;
-            color: #0f1f35;
-        }
-
-        .item-date {
-            font-size: 9pt;
-            color: #4a6080;
-            white-space: nowrap;
-        }
-
-        .item-sub {
-            font-size: 9.5pt;
-            color: #1d4ed8;
-            font-weight: 500;
-            margin-bottom: 3px;
-        }
-
-        .item-desc {
-            font-size: 9.5pt;
-            color: #2a3f55;
-        }
-
-        .item-desc ul {
-            padding-left: 16px;
-            margin-top: 3px;
-        }
-
-        .item-desc ul li {
-            margin-bottom: 2px;
-        }
-
-        /* ── TAGS ── */
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5px;
-            margin-top: 4px;
-        }
-
-        .tag {
-            font-size: 8pt;
-            background: #eff6ff;
-            color: #1d4ed8;
-            border: 1px solid #bfdbfe;
-            padding: 1px 7px;
-            border-radius: 99px;
-            font-weight: 500;
-        }
-
-        /* ── EDUCATION ── */
-        .edu-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 7px;
-        }
-
-        .edu-deg {
-            font-weight: 700;
-            font-size: 10.5pt;
-        }
-
-        .edu-school {
-            font-size: 9.5pt;
-            color: #1d4ed8;
-            font-weight: 500;
-        }
-
-        .edu-score {
-            font-family: monospace;
-            font-size: 9.5pt;
-            font-weight: 700;
-            color: #059669;
-        }
-
-        /* ── SKILLS ── */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 5px 12px;
-        }
-
-        .skill-item {
-            font-size: 9.5pt;
-        }
-
-        .skill-item span {
-            font-weight: 600;
-            color: #1d4ed8;
-        }
-
-        /* ── CERTS ── */
-        .cert-list {
-            columns: 2;
-            gap: 16px;
-        }
-
-        .cert-item {
-            font-size: 9pt;
-            color: #2a3f55;
-            margin-bottom: 3px;
-            break-inside: avoid;
-        }
-
-        .cert-item::before {
-            content: "✓ ";
-            color: #059669;
-            font-weight: 700;
-        }
-
-        /* ── PRINT ── */
-        @media print {
-            body {
-                padding: 1.5cm 1.5cm;
-            }
-
-            a {
-                color: #1d4ed8 !important;
-            }
-
-            .no-print {
-                display: none;
-            }
-        }
-
-        /* ── DOWNLOAD BANNER ── */
-        .download-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: #1d4ed8;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            padding: .7rem 1rem;
-            font-size: .88rem;
-            font-weight: 600;
-            z-index: 999;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .download-bar button {
-            background: #fff;
-            color: #1d4ed8;
-            border: none;
-            padding: .35rem 1rem;
-            border-radius: 6px;
-            font-weight: 700;
-            cursor: pointer;
-            font-size: .85rem;
-        }
-
-        .download-bar button:hover {
-            background: #eff6ff;
-        }
-
-        body.no-bar {
-            padding-top: 64px;
-        }
-    </style>
+    /* ── DOWNLOAD BUTTON (screen only) ── */
+    .dl-bar {
+      display:flex; justify-content:flex-end; gap:.8rem;
+      padding:.6rem 0 1.2rem;
+    }
+    .dl-btn {
+      background:#2563eb; color:#fff;
+      padding:.4rem 1.1rem; border:none; border-radius:7px;
+      font-size:.82rem; font-weight:600; cursor:pointer;
+      font-family:'DM Sans',sans-serif;
+      text-decoration:none; display:inline-flex; align-items:center; gap:.35rem;
+    }
+    .dl-btn:hover { background:#1d4ed8; }
+    .dl-btn.ghost {
+      background:transparent; border:1px solid #2563eb; color:#2563eb;
+    }
+    .dl-btn.ghost:hover { background:#eff6ff; }
+    @media print { .dl-bar { display:none; } }
+  </style>
 </head>
-
 <body>
 
-    <!-- Download banner (hidden on print) -->
-    <div class="download-bar no-print" id="dlBar">
-        📄 To save as PDF: click <button onclick="window.print()">Save as PDF / Print</button> &nbsp;→ then choose "Save
-        as PDF" in the print dialog
-        <button onclick="document.getElementById('dlBar').style.display='none'; document.body.style.paddingTop='0'"
-            style="background:rgba(255,255,255,.2);color:#fff;margin-left:8px;">✕</button>
+  <!-- Download bar (visible on screen only) -->
+  <div class="dl-bar">
+    <a href="index.html" class="dl-btn ghost">← Portfolio</a>
+    <button class="dl-btn" onclick="window.print()">⬇ Download PDF</button>
+  </div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="h-left">
+      <h1>Narsale Shreyas Manohar</h1>
+      <div class="role">Software Developer · AI &amp; ML Engineer</div>
+      <div class="college">B.E. Information Technology · PVG's COET, Pune</div>
+    </div>
+    <div class="h-right">
+      📧 <a href="mailto:shreyasnarsale02@gmail.com">shreyasnarsale02@gmail.com</a><br>
+      📱 <a href="tel:+919021775590">+91 9021775590</a><br>
+      🌐 <a href="https://github.com/shreyasnarsale" target="_blank">github.com/shreyasnarsale</a><br>
+      💼 <a href="https://www.linkedin.com/in/shreyas-narsale-04b266261/" target="_blank">linkedin.com/in/shreyas-narsale</a><br>
+      ⚡ <a href="https://leetcode.com/u/shreyasnarsale/" target="_blank">leetcode.com/shreyasnarsale</a><br>
+      📍 Pune, Maharashtra, India
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="sec">
+    <div class="sec-title">Professional Summary</div>
+    <div class="item-desc">
+      Final-year B.E. IT student at PVG's COET, Pune with hands-on experience in full-stack development, AI/ML systems, and RAG-based applications. Passionate about building AI-powered solutions with clean, production-ready code. Experienced in Python, React, FastAPI, LangChain, and cloud fundamentals. Actively seeking full-time Software Developer / AI-ML Engineer roles.
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="sec">
+    <div class="sec-title">Education</div>
+
+    <div class="item">
+      <div class="edu-row">
+        <div>
+          <div class="edu-deg">Bachelor of Engineering — Information Technology</div>
+          <div class="edu-school">Pune Vidyarthi Griha's College of Engineering, Technology &amp; Management (PVG's COET)</div>
+        </div>
+        <div style="text-align:right;">
+          <div class="edu-score">CGPA: 8.0</div>
+          <div class="item-date">2022 – 2026</div>
+        </div>
+      </div>
     </div>
 
-    <!-- ── HEADER ── -->
-    <div class="header">
-        <div class="header-left">
-            <h1>Shreyas Narsale</h1>
-            <div class="title">Aspiring Data Scientist &nbsp;</div>
-            <div class="college">Pune Vidhyarthi Griha's College of Engineering and Technology — B.E.I.T.</div>
+    <div class="item">
+      <div class="edu-row">
+        <div>
+          <div class="edu-deg">Higher Secondary Certificate (HSC) — Science</div>
+          <div class="edu-school">New English School &amp; Jr. College of Science, Parner · Maharashtra State Board</div>
         </div>
-        <div class="header-right">
-            Pune, Maharashtra, India<br>
-            <a href="mailto:shreyasnarsale02@gmail.com">shreyasnarsale02@gmail.com</a><br>
-            <a href="https://github.com/shreyasnarsale" target="_blank">github.com/shreyasnarsale</a><br>
-            <a href="https://www.linkedin.com/in/shreyas-narsale-04b266261/"
-                target="_blank">linkedin.com/in/shreyas-narsale</a><br>
-            <a href="https://leetcode.com/u/shreyasnarsale/" target="_blank">https://leetcode.com/u/shreyasnarsale/</a>
+        <div style="text-align:right;">
+          <div class="edu-score">80.83%</div>
+          <div class="item-date">2022</div>
         </div>
+      </div>
     </div>
 
-    <!-- ── EDUCATION ── -->
-    <div class="section">
-        <div class="section-title">Education</div>
-
-        <div class="item">
-            <div class="edu-row">
-                <div>
-                    <div class="edu-deg">Bachelor of Engineering — Information Technology</div>
-                    <div class="edu-school">Pune Vidhyarthi Griha's College of Engineering and Technology</div>
-                </div>
-                <div class="item-date">2022 — Present</div>
-            </div>
+    <div class="item">
+      <div class="edu-row">
+        <div>
+          <div class="edu-deg">Secondary School Certificate (SSC) — 10th</div>
+          <div class="edu-school">New English School, Parner · Maharashtra State Board</div>
         </div>
-
-        <div class="item">
-            <div class="edu-row">
-                <div>
-                    <div class="edu-deg">Higher Secondary Certificate (HSC) — Science</div>
-                    <div class="edu-school">Maharashtra State Board</div>
-                </div>
-                <div style="text-align:right;">
-                    <div class="edu-score">80.83%</div>
-                    <div class="item-date">2024</div>
-                </div>
-            </div>
+        <div style="text-align:right;">
+          <div class="edu-score">90.60%</div>
+          <div class="item-date">2020</div>
         </div>
+      </div>
+    </div>
+  </div>
 
-        <div class="item">
-            <div class="edu-row">
-                <div>
-                    <div class="edu-deg">Secondary School Certificate (SSC) — 10th</div>
-                    <div class="edu-school">Maharashtra State Board</div>
-                </div>
-                <div style="text-align:right;">
-                    <div class="edu-score">90.60%</div>
-                    <div class="item-date">2020</div>
-                </div>
-            </div>
-        </div>
+  <!-- INTERNSHIP EXPERIENCE -->
+  <div class="sec">
+    <div class="sec-title">Internship Experience</div>
+
+    <div class="item">
+      <div class="item-head">
+        <div class="item-title">Full Stack Agentic AI Developer Intern</div>
+        <div class="item-date">Jan 2026 – Feb 2026</div>
+      </div>
+      <div class="item-sub">HUV · AICTE · 6 Weeks</div>
+      <div class="item-desc">
+        <ul>
+          <li>Developed an AI-powered Documentation Generator that automatically creates structured documentation from source code using LLMs, RAG, and Google Gemini.</li>
+          <li>Built full-stack architecture with React (frontend) and FastAPI (backend), integrating LangChain, FAISS vector DB, and Firebase Authentication for a scalable end-to-end system.</li>
+          <li>Gained hands-on experience in LLM integration, vector databases, REST API development, and production deployment workflows.</li>
+        </ul>
+      </div>
+      <div class="tags">
+        <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">FastAPI</span>
+        <span class="tag">React</span><span class="tag">FAISS</span><span class="tag">Google Gemini</span>
+        <span class="tag">Firebase</span><span class="tag">RAG</span><span class="tag">LLM</span>
+      </div>
     </div>
 
-    <!-- ── INTERNSHIP EXPERIENCE ── -->
-    <div class="section">
-        <div class="section-title">Internship Experience</div>
+    <div class="item">
+      <div class="item-head">
+        <div class="item-title">Stock Market Intern</div>
+        <div class="item-date">Feb 2024 – May 2024</div>
+      </div>
+      <div class="item-sub">Corizo · 4 Months</div>
+      <div class="item-desc">
+        <ul>
+          <li>Gained hands-on knowledge of financial markets, investment instruments, and data-driven analysis techniques.</li>
+          <li>Worked on stock price prediction and mutual fund market analysis using data science and machine learning approaches.</li>
+          <li>Developed practical understanding of financial data interpretation, model building, and analytical tools in investment decision-making.</li>
+        </ul>
+      </div>
+      <div class="tags">
+        <span class="tag">Python</span><span class="tag">Data Science</span><span class="tag">Machine Learning</span>
+        <span class="tag">Financial Analysis</span><span class="tag">Data Visualization</span>
+      </div>
+    </div>
+  </div>
 
-        <div class="item">
-            <div class="item-header">
-                <div class="item-title">Cloud Virtual Internship — AWS Academy</div>
-                <div class="item-date">Jul – Sep 2025</div>
-            </div>
-            <div class="item-sub">AICTE-EduSkills · National Internship Portal · 10 Weeks</div>
-            <div class="item-desc">
-                Successfully completed a 10-week AICTE–EduSkills Cloud Virtual Internship with curriculum provided by AWS Academy. Gained hands-on exposure to AWS Cloud Infrastructure, cloud-native architecture, and cloud computing fundamentals. Grade: E (Excellent: 80–89).
-            </div>
-            <div class="tags">
-                <span class="tag">AWS Cloud</span><span class="tag">Cloud Computing</span><span class="tag">AWS Academy</span><span class="tag">Cloud-Native Architecture</span>
-            </div>
-        </div>
+  <!-- PROJECTS -->
+  <div class="sec">
+    <div class="sec-title">Projects</div>
 
-        <div class="item">
-            <div class="item-header">
-                <div class="item-title">Cybersecurity Virtual Internship — Palo Alto Networks</div>
-                <div class="item-date">Apr – Jun 2025</div>
-            </div>
-            <div class="item-sub">AICTE-EduSkills · National Internship Portal · 10 Weeks</div>
-            <div class="item-desc">
-                Successfully completed a 10-week AICTE–EduSkills Cybersecurity Virtual Internship supported by Palo Alto Networks. Covered cybersecurity fundamentals, network security, security operations, and cloud security concepts. Grade: E (Excellent: 80–89).
-            </div>
-            <div class="tags">
-                <span class="tag">Cybersecurity</span><span class="tag">Network Security</span><span class="tag">Palo Alto Networks</span><span class="tag">SOC</span><span class="tag">Cloud Security</span>
-            </div>
-        </div>
+    <div class="item">
+      <div class="item-head">
+        <div class="item-title">🧠 DocuMind AI — Chat with Any File</div>
+        <div class="item-date">2025</div>
+      </div>
+      <div class="item-sub">Personal Project · Open Source · <a href="https://github.com/shreyasnarsale/documind-ai" target="_blank">github.com/shreyasnarsale/documind-ai</a></div>
+      <div class="item-desc">AI-powered chatbot that lets users converse with any file — PDF, DOCX, PPTX, ZIP, and more. Built with a full RAG (Retrieval-Augmented Generation) pipeline using LangChain and ChromaDB for intelligent document retrieval and multi-turn conversation.</div>
+      <div class="tags"><span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">ChromaDB</span><span class="tag">RAG</span><span class="tag">LLM</span></div>
     </div>
 
-    <!-- ── EXPERIENCE / PROJECTS ── -->
-    <div class="section">
-        <div class="section-title">Projects & Experience</div>
-
-        <div class="item">
-            <div class="item-header">
-                <div class="item-title">🧠 EduGuard AI — Student Dropout Risk Prediction</div>
-                <div class="item-date">Feb 2026</div>
-            </div>
-            <div class="item-sub">Hackathon Project · Full-Stack ML Web Application</div>
-            <div class="item-desc">
-                <ul>
-                    <li>Built a full-stack AI platform predicting student dropout risk using Machine Learning on
-                        academic, attendance, and behavioral data.</li>
-                    <li>Designed a FastAPI + PostgreSQL backend with role-based access (Admin, HOD, Teacher, Counselor,
-                        Student) and real-time risk dashboards.</li>
-                    <li>Implemented CSV data export, REST APIs, and a React frontend with live scoring updates.</li>
-                </ul>
-            </div>
-            <div class="tags">
-                <span class="tag">Python</span><span class="tag">Machine Learning</span><span class="tag">FastAPI</span>
-                <span class="tag">PostgreSQL</span><span class="tag">Node.js</span><span class="tag">React</span>
-                <span class="tag">REST APIs</span><span class="tag">Data Analytics</span>
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="item-header">
-                <div class="item-title">🤖 Zen-Task AI — AI Integrated To-Do Application</div>
-                <div class="item-date">Jan 2026</div>
-            </div>
-            <div class="item-sub">Personal Project · Open Source · ⭐ GitHub Starred</div>
-            <div class="item-desc">AI-powered task manager built with HTML/CSS/JS featuring smart suggestions and
-                categorization. Published on GitHub.</div>
-            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span
-                    class="tag">JavaScript</span><span class="tag">AI Integration</span></div>
-        </div>
-
-        <div class="item">
-            <div class="item-header">
-                <div class="item-title">🗄️ Data Cleaning using SQL</div>
-                <div class="item-date">Feb 2026</div>
-            </div>
-            <div class="item-sub">Data Engineering · Academic Project</div>
-            <div class="item-desc">Cleaned and preprocessed real-world datasets using structured SQL queries — handling
-                nulls, duplicates, type mismatches, and formatting inconsistencies.</div>
-            <div class="tags"><span class="tag">SQL</span><span class="tag">MySQL</span><span class="tag">Data
-                    Cleaning</span></div>
-        </div>
-
-        <div class="item">
-            <div class="item-header">
-                <div class="item-title">🟢 Node.js Bootcamp</div>
-                <div class="item-date">Aug 2025</div>
-            </div>
-            <div class="item-sub">Self-Learning · Open Source · ⭐ GitHub Starred</div>
-            <div class="item-desc">Completed hands-on Node.js bootcamp covering modules, file system, HTTP server,
-                Express, and REST API fundamentals.</div>
-            <div class="tags"><span class="tag">Node.js</span><span class="tag">JavaScript</span><span class="tag">REST
-                    API</span><span class="tag">Express</span></div>
-        </div>
-
-        <div class="item">
-            <div class="item-header">
-                <div class="item-title">👥 Employee Management System</div>
-                <div class="item-date">2025</div>
-            </div>
-            <div class="item-sub">Java OOP · CRUD System</div>
-            <div class="item-desc">Full Java-based EMS with CRUD operations, role management, and OOP architecture.
-            </div>
-            <div class="tags"><span class="tag">Java</span><span class="tag">OOP</span><span class="tag">CRUD</span>
-            </div>
-        </div>
+    <div class="item">
+      <div class="item-head">
+        <div class="item-title">📄 Documentation Generator — AI Full-Stack App</div>
+        <div class="item-date">2025</div>
+      </div>
+      <div class="item-sub">Full-Stack · Live: <a href="https://documentation-generator-project.netlify.app" target="_blank">documentation-generator-project.netlify.app</a></div>
+      <div class="item-desc">Full-stack AI application that generates complete project documentation from a codebase ZIP file and allows conversational Q&amp;A with the docs using RAG. Deployed on Netlify.</div>
+      <div class="tags"><span class="tag">Python</span><span class="tag">RAG</span><span class="tag">LangChain</span><span class="tag">JavaScript</span><span class="tag">Netlify</span></div>
     </div>
 
-    <!-- ── SKILLS ── -->
-    <div class="section">
-        <div class="section-title">Technical Skills</div>
-        <div class="skills-grid">
-            <div class="skill-item"><span>Languages:</span> Python, Java, C, C++, SQL, JavaScript</div>
-            <div class="skill-item"><span>Web:</span> HTML/CSS, Node.js, Express, React</div>
-            <div class="skill-item"><span>Data:</span> Pandas, NumPy, Matplotlib, Seaborn</div>
-            <div class="skill-item"><span>Databases:</span> MySQL, PostgreSQL, DBMS</div>
-            <div class="skill-item"><span>ML / AI:</span> ML Fundamentals, Gen AI</div>
-            <div class="skill-item"><span>Cloud:</span> AWS (Cloud Foundations, Certified)</div>
-            <div class="skill-item"><span>Security:</span> Cybersecurity (Cisco, Palo Alto)</div>
-            <div class="skill-item"><span>APIs:</span> REST APIs, FastAPI, Postman</div>
-            <div class="skill-item"><span>Tools:</span> Git, GitHub, VS Code, Linux</div>
-        </div>
+    <div class="item">
+      <div class="item-head">
+        <div class="item-title">✈️ Airline Reservation &amp; Booking System</div>
+        <div class="item-date">2025</div>
+      </div>
+      <div class="item-sub">Django Full-Stack Web Application · <a href="https://github.com/shreyasnarsale/Airline_Reservation_System" target="_blank">GitHub</a></div>
+      <div class="item-desc">Modern airline reservation system with flight booking, passenger management, payment integration, admin panel, authentication, and responsive UI built with Django.</div>
+      <div class="tags"><span class="tag">Python</span><span class="tag">Django</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
     </div>
 
-    <!-- ── CERTIFICATIONS ── -->
-    <div class="section">
-        <div class="section-title">Certifications (18 Total)</div>
-        <div class="cert-list">
-            <div class="cert-item">IBM Certified Specialist — DB2 V7.1 User (IBM)</div>
-            <div class="cert-item">AWS Academy Cloud Foundations (Amazon Web Services)</div>
-            <div class="cert-item">AWS Certifications — Cloud-Native Architecture (AWS)</div>
-            <div class="cert-item">AWS Certifications (AWS &amp; AICTE)</div>
-            <div class="cert-item">Cisco CCNA — Networking (Cisco Networking Academy)</div>
-            <div class="cert-item">Cisco CCNA — AI &amp; Networking (Cisco)</div>
-            <div class="cert-item">Cybersecurity (Cisco Networking Academy)</div>
-            <div class="cert-item">Cyber Security (Cisco Networking Academy)</div>
-            <div class="cert-item">Programming in C (Cisco Networking Academy)</div>
-            <div class="cert-item">Data Analytics (HP LIFE)</div>
-            <div class="cert-item">Security Operation Fundamentals (Palo Alto Networks)</div>
-            <div class="cert-item">Cloud Security Fundamentals (Palo Alto Networks)</div>
-            <div class="cert-item">Network Security Fundamentals (Palo Alto Networks)</div>
-            <div class="cert-item">Cybersecurity Fundamentals (Palo Alto Networks)</div>
-            <div class="cert-item">Prompt Engineering (Simplilearn)</div>
-            <div class="cert-item">Introduction to Generative AI Studio (Simplilearn)</div>
-            <div class="cert-item">Internet of Things (ExcelR)</div>
-            <div class="cert-item">AWS Certifications (Amazon Web Services)</div>
-        </div>
+    <div class="item">
+      <div class="item-head">
+        <div class="item-title">🚗 Cab Booking App</div>
+        <div class="item-date">2025</div>
+      </div>
+      <div class="item-sub">React · TypeScript · <a href="https://github.com/shreyasnarsale/Cab-Booking-App" target="_blank">GitHub</a></div>
+      <div class="item-desc">Modern single-page ride-booking application simulating the complete ride lifecycle for both passengers and drivers, built with React and TypeScript.</div>
+      <div class="tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span></div>
     </div>
+  </div>
 
-    <!-- ── EXTRA ── -->
-    <div class="section">
-        <div class="section-title">Activities &amp; Interests</div>
-        <div style="font-size:9.5pt; color:#2a3f55;">
-            <strong>NSS Volunteer</strong> — Shah And Anchor Kutchhi Engineering College &nbsp;|&nbsp;
-            <strong>LeetCode</strong> — Active problem solver &nbsp;|&nbsp;
-            <strong>Hackathons</strong> — EduGuard AI (Feb 2026) &nbsp;|&nbsp;
-            <strong>Interests:</strong> Data Science, AI/ML, Cybersecurity, Open Source, IoT
-        </div>
+  <!-- TECHNICAL SKILLS -->
+  <div class="sec">
+    <div class="sec-title">Technical Skills</div>
+    <div class="skills-grid">
+      <div class="skill-item"><span>Languages:</span> Python, Java, C++, JavaScript</div>
+      <div class="skill-item"><span>Web Dev:</span> HTML/CSS, React, Node.js, FastAPI</div>
+      <div class="skill-item"><span>Databases:</span> SQL, MySQL, MongoDB</div>
+      <div class="skill-item"><span>AI / ML:</span> Machine Learning, Data Science, RAG, LangChain</div>
+      <div class="skill-item"><span>Tools:</span> Git, GitHub, Linux, VS Code</div>
+      <div class="skill-item"><span>CS Core:</span> DSA, Networking, OOP, OS</div>
     </div>
+  </div>
 
-    <script>
-        // Auto-show print dialog after a short delay
-        // Uncomment line below if you want auto-print on open:
-        // setTimeout(() => window.print(), 800);
-    </script>
+  <!-- CERTIFICATIONS -->
+  <div class="sec">
+    <div class="sec-title">Certifications</div>
+    <div class="cert-list">
+      <div class="cert-item">Agentic AI Full Stack Developer Internship (HUV · AICTE)</div>
+      <div class="cert-item">IBM Machine Learning with Python (IBM)</div>
+      <div class="cert-item">IBM Full Stack Software Developer (IBM)</div>
+      <div class="cert-item">AWS Academy Cloud Foundations (Amazon Web Services)</div>
+      <div class="cert-item">Cisco Introduction to Networks / CCNA (Cisco)</div>
+      <div class="cert-item">Cybersecurity Fundamentals (Palo Alto Networks)</div>
+      <div class="cert-item">Network Security Fundamentals (Palo Alto Networks)</div>
+      <div class="cert-item">Corizo Stock Market Internship (Corizo)</div>
+      <div class="cert-item">AICTE HUV Workshop (AICTE)</div>
+    </div>
+  </div>
+
+  <!-- ACTIVITIES -->
+  <div class="sec">
+    <div class="sec-title">Activities &amp; Interests</div>
+    <div class="item-desc">
+      <strong>LeetCode</strong> — Active problem solver (shreyasnarsale) &nbsp;|&nbsp;
+      <strong>Interests:</strong> AI/ML, Full-Stack Development, RAG Systems, Cloud Computing, Open Source, Data Science
+    </div>
+  </div>
+
+  <script>
+    // Print as PDF with correct filename via browser print dialog
+    // Ctrl+P → Save as PDF → rename to Narsale_Shreyas_Resume.pdf
+  </script>
 </body>
-
 </html>
